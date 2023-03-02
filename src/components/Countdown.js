@@ -31,18 +31,18 @@ export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
   useEffect(() => {
     // percentage of countDown
     onProgress(millis / minutesToMillis(minutes));
-  }, [millis,onProgress, minutes]);
+  }, [millis]);
 
   useEffect(() => {
-    if (isPaused) {
-      if (interval.current) clearInterval(interval.current);
+    if (isPaused && interval.current) {
+      clearInterval(interval.current);
       return;
     }
 
     interval.current = setInterval(countDown, 1000);
 
     return () => clearInterval(interval.current);
-  }, [isPaused,countDown]);
+  }, [isPaused]);
 
   const minute = Math.floor(millis / 1000 / 60) % 60;
   const seconds = Math.floor(millis / 1000) % 60;

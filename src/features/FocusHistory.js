@@ -24,6 +24,7 @@ export const FocusHistory = ({ historyArr }) => {
 const styles = StyleSheet.create({
   container: {
     padding: spacing.md,
+    paddingTop: spacing.xxl
   },
   text: {
     color: colors.white,
