@@ -15,7 +15,7 @@ export const FocusHistory = ({ historyArr }) => {
       <FlatList
         data={historyArr}
         renderItem={renderHistoryArr}
-        keyExtractor={(item) => item}
+        // keyExtractor={(item) => item}
       />
     </View>
   );
